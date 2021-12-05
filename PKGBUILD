@@ -15,6 +15,8 @@ depends=(baloo-widgets knewstuff-git kio-extras-git kcmutils-git kparts-git kact
 makedepends=(extra-cmake-modules-git kdoctools-git)
 optdepends=('kde-cli-tools: for editing file type options' 'ffmpegthumbs: video thumbnails' 'kdegraphics-thumbnailers: PDF and PS thumbnails'
             'konsole: terminal panel' 'purpose: share context menu')
+conflicts=(dolphin dolphin-git)
+provides=(dolphin)
 groups=(kde-applications-git kde-system-git)
 source=("git+https://invent.kde.org/system/${pkgname%-git-git}.git")
 sha256sums=('SKIP')
