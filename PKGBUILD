@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
-pkgname=dolphin-git-git
+pkgname=dolphin-git
 pkgver=21.11.90.r26.g6cd5e10f2
 pkgrel=1
 pkgdesc='KDE File Manager'
@@ -15,18 +15,18 @@ depends=(baloo-widgets knewstuff-git kio-extras-git kcmutils-git kparts-git kact
 makedepends=(extra-cmake-modules-git kdoctools-git)
 optdepends=('kde-cli-tools: for editing file type options' 'ffmpegthumbs: video thumbnails' 'kdegraphics-thumbnailers: PDF and PS thumbnails'
             'konsole: terminal panel' 'purpose: share context menu')
-conflicts=(dolphin dolphin-git)
-provides=(dolphin)
+conflicts=(${pkgname%-git})
+provides=(${pkgname%-git})
 groups=(kde-applications-git kde-system-git)
-source=("git+https://invent.kde.org/system/${pkgname%-git-git}.git")
+source=("git+https://invent.kde.org/system/${pkgname%-git}.git")
 sha256sums=('SKIP')
 
 pkgver() {
-    git -C ${pkgname%-git-git} describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+    git -C ${pkgname%-git} describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 build() {
-  cmake -B build -S ${pkgname%-git-git} \
+  cmake -B build -S ${pkgname%-git} \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
