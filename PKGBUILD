@@ -12,7 +12,7 @@ arch=(x86_64)
 url='https://apps.kde.org/dolphin/'
 license=(LGPL)
 depends=(baloo-widgets knewstuff-git kio-extras-git kcmutils-git kparts-git kactivities-git kuserfeedback-git)
-makedepends=(extra-cmake-modules-git kdoctools-git)
+makedepends=(git extra-cmake-modules-git kdoctools-git)
 optdepends=('kde-cli-tools: for editing file type options' 'ffmpegthumbs: video thumbnails' 'kdegraphics-thumbnailers: PDF and PS thumbnails'
             'konsole: terminal panel' 'purpose: share context menu')
 conflicts=(${pkgname%-git})
